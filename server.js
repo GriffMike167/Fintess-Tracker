@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-cost PORT = process.env.port || 3000
+const PORT = process.env.port || 3000
 
 const app = express();
 
@@ -18,6 +18,6 @@ const db = require(".models");
 require("./routes/apiroutes")(app);
 require("./routes/htmlroutes")(app);
 
-app.listen(PORT, ( => {
+app.listen(PORT, () => {
     console.log(`App runnng on port ${PORT}`)
-}))
+});
