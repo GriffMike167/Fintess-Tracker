@@ -1,5 +1,5 @@
 const db =require("../models");
-const { update } = require("../models/workout");
+// const { update } = require("../models/workout");
 
 module.exports = function(app) {
 
@@ -37,6 +37,24 @@ module.exports = function(app) {
         })
         .catch(err => {
             res.jsoon(err)
+        })
+    })
+
+    function updateWorkout (exercise){
+        db.Workout.findByIdAndUpdate(workoutId, {exercise: exercise}, function(err,doc){
+            if(err){
+                console.log(err)
+            }
+        })
+    }
+
+    app.get("/api/workoutd/range", (req, res) => {
+        db.Workout.find({})
+        .then(workout => {
+            res.json(workout)
+        })
+        .catch(err => {
+            res.json(err);
         })
     })
 }
