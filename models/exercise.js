@@ -1,6 +1,8 @@
 const mongoose = require("mongoose")
 
-const Schema = mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const ExerciseSchema = new Schema({
 
     type: String,
     name: String,
@@ -9,6 +11,7 @@ const Schema = mongoose.Schema({
     weight: Number,
     sets: Number,
     reps: Number
+    
 });
 
 const Exercise = mongoose.model("Exercise", ExerciseSchema);
