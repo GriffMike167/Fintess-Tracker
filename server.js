@@ -16,7 +16,7 @@ mongoose.connect(MONGODB_URI, {
     useNewUrlParser:true,
     useFindAndModify:false,
     useUnifiedTopology: true,
-       useCreateIndex: true
+    useCreateIndex: true
 })
 
 require("./routes/api-routes").default;
