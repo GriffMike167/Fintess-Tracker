@@ -14,7 +14,7 @@ module.exports = function(app) {
     app.post("/api/workouts", async (req, res) => {
         try{
             const response = await db.Workout.create({type: "workout"})
-            res.json(resposne)
+            res.json(response)
         }
         catch(err){
             console.log("error occurred creating a workout: ", err)
@@ -29,7 +29,7 @@ module.exports = function(app) {
 
         db.Workout.find({_id: workoutId})
         .then(dbWorkout => {
-            savedExercise = dbWorokout[0].exercise;
+            savedExercise = dbWorkout[0].exercise;
             res.json(dbWorkout[0].exercise);
             let allExercise = [...savedExercise, body]
             console.log(allExercise)
