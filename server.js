@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-const db = require(".models");
+// const db = require(".models");
 
 require("./routes/api-routes")(app);
 require("./routes/html-routes")(app);
