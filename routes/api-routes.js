@@ -1,10 +1,10 @@
-const db =require("../models");
+import { Workout } from "../models";
 // const { update } = require("../models/workout");
 
-module.exports = function(app) {
+export default function(app) {
 
     app.get("/api/workouts", (req, res) => {
-        db.Workout.find({})
+        Workout.find({})
         .then(workout => {
             res.json(workout);
         });
@@ -13,7 +13,7 @@ module.exports = function(app) {
 
     app.post("/api/workouts", async (req, res) => {
         try{
-            const response = await db.Workout.create({type: "workout"})
+            const response = await Workout.create({type: "workout"})
             res.json(response)
         }
         catch(err){
@@ -27,7 +27,7 @@ module.exports = function(app) {
         const workoutId = params.id;
         let savedExercise = [];
 
-        db.Workout.find({_id: workoutId})
+        Workout.find({_id: workoutId})
         .then(dbWorkout => {
             savedExercise = dbWorkout[0].exercise;
             res.json(dbWorkout[0].exercise);
@@ -41,7 +41,7 @@ module.exports = function(app) {
     })
 
     function updateWorkout (exercise){
-        db.Workout.findByIdAndUpdate(workoutId, {exercise: exercise}, function(err,doc){
+        Workout.findByIdAndUpdate(workoutId, {exercise: exercise}, function(err,doc){
             if(err){
                 console.log(err)
             }
@@ -49,7 +49,7 @@ module.exports = function(app) {
     }
 
     app.get("/api/workoutd/range", (req, res) => {
-        db.Workout.find({})
+        Workout.find({})
         .then(workout => {
             res.json(workout)
         })
