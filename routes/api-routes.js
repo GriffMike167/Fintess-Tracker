@@ -24,7 +24,7 @@ module.exports = function(app) {
 
     app.put("/api/workouts/:id", ({body, params}, res) => {
 
-        const wourkoutId = params.id;
+        const workoutId = params.id;
         let savedExercise = [];
 
         db.Workout.find({_id: workoutId})
