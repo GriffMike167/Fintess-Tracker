@@ -18,9 +18,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout",
   
 });
 
-// const db = require(".models");
-
-// const db = require(".models");
 require("./routes/api-routes").default;
 require("./routes/html-routes");
 
