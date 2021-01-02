@@ -20,7 +20,8 @@
   inquirer was installed for this package
 
 ## Usage
-  To create and keep track of workouts that have been performed, tracked by minutes worked out by exercise and pounds lifted. Adding new workouts continues to build the data output. Then updates the tracked workout.
+  To create and keep track of workouts that have been performed, tracked by minutes worked out by exercise and pounds lifted. Adding new workouts continues to build the data output. Then updates the tracked workout. [Fitness-Tracker](https://fitnessapp123.herokuapp.com/)
+
 
 <img src="trackedworkouts.png" alt="tracked workouts">
 <img src="addworkouts.png" alt="added workouts">
