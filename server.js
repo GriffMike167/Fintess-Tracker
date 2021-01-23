@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://griffmike167:Irish4528@fitness-tracker.70e1x.mongodb.net/workout?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/wokouts", {
   useNewUrlParser: true,
   useFindAndModify: false,
   // useCreateIndex: true,
